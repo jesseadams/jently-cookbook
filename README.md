@@ -4,55 +4,58 @@ This is a chef cookbook that sets up [Jently](https://github.com/vaneyckt/Jently
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
-e.g.
-#### packages
-- `toaster` - jently needs toaster to brown your bagel.
+Cookbooks
+
+ - git
+
+Platforms
+
+ - ubuntu
+
+Installation
+------------
+
+Add the `phamtomjs` cookbook to your `Berksfile`:
+
+```ruby
+cookbook 'jently'
+```
+
+or install directly with knife:
+
+    $ knife cookbook site install jently
 
 Attributes
 ----------
-TODO: List you cookbook attributes here.
 
-e.g.
-#### jently::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['jently']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+Please see [attributes/default.rb](https://github.com/paydici/jently-cookbook/tree/master/attributes/default.rb). These pretty much map 1:1 with [Jently's config file](https://github.com/vaneyckt/Jently/blob/master/config/sample-config.yaml.erb).
 
 Usage
 -----
-#### jently::default
-TODO: Write usage instructions for each cookbook.
+Add the cookbook to your `run_list` in a node or role:
 
-e.g.
-Just include `jently` in your node's `run_list`:
+```ruby
+"run_list": [
+  "recipe[jently::default]"
+]
+```
 
-```json
-{
-  "name":"my_node",
-  "run_list": [
-    "recipe[jently]"
-  ]
-}
+or include it in a recipe:
+
+```ruby
+# other_cookbook/metadata.rb
+# ...
+depends 'jently'
+```
+```ruby
+# other_cookbook/recipes/default.rb
+# ...
+include_recipe 'jently::default'
 ```
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write you change

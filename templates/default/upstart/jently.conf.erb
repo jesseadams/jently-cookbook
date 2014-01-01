@@ -1,0 +1,8 @@
+start on runlevel [2345]
+stop on runlevel [06]
+
+chdir <%= @server_dir %>
+setuid jently
+
+respawn
+exec bundle exec ruby jently.rb
