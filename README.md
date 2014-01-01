@@ -71,4 +71,4 @@ Authors:
 
 * Jesse R. Adams
 
-MIT Licence
+MIT License
