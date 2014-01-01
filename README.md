@@ -16,7 +16,7 @@ Platforms
 Installation
 ------------
 
-Add the `phamtomjs` cookbook to your `Berksfile`:
+Add the `jently` cookbook to your `Berksfile`:
 
 ```ruby
 cookbook 'jently'
@@ -56,6 +56,7 @@ include_recipe 'jently::default'
 
 Contributing
 ------------
+
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write you change
@@ -65,8 +66,9 @@ Contributing
 
 License and Authors
 -------------------
+
 Authors:
 
 * Jesse R. Adams
 
-MIT LICENSE
+MIT Licence
